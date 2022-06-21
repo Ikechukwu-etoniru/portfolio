@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:web_portfolio/pages/home/components/carousel.dart';
-import 'package:web_portfolio/pages/home/components/cv_section.dart';
-import 'package:web_portfolio/pages/home/components/education_section.dart';
-import 'package:web_portfolio/pages/home/components/footer.dart';
-import 'package:web_portfolio/pages/home/components/header.dart';
-import 'package:web_portfolio/pages/home/components/ios_app_ad.dart';
-import 'package:web_portfolio/pages/home/components/portfolio_stats.dart';
-import 'package:web_portfolio/pages/home/components/skill_section.dart';
-import 'package:web_portfolio/pages/home/components/sponsors.dart';
-import 'package:web_portfolio/pages/home/components/testimonial_widget.dart';
-import 'package:web_portfolio/pages/home/components/website_ad.dart';
+import 'package:web_portfolio/pages/components/carousel.dart';
+import 'package:web_portfolio/pages/components/carousel_items.dart';
+import 'package:web_portfolio/pages/components/cv_section.dart';
+import 'package:web_portfolio/pages/components/footer.dart';
+import 'package:web_portfolio/pages/components/header.dart';
+import 'package:web_portfolio/pages/projects/kasheto_app.dart';
+import 'package:web_portfolio/pages/components/portfolio_stats.dart';
+import 'package:web_portfolio/pages/components/skill_section.dart';
+import 'package:web_portfolio/pages/components/sponsors.dart';
+import 'package:web_portfolio/pages/projects/thrifty_expense.dart';
+import 'package:web_portfolio/pages/projects/tic_tac_toe_game.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 
@@ -77,24 +76,24 @@ class Home extends StatelessWidget {
               Container(
                 child: Header(),
               ),
-              Carousel(),
+              Carousel(carouselItems: carouselItems),
               SizedBox(
                 height: 20.0,
               ),
               CvSection(),
-              IosAppAd(),
+              KashetoApp(),
               SizedBox(
                 height: 70.0,
               ),
-              WebsiteAd(),
+              ThriftyExpenseApp(),
+              SizedBox(
+                height: 70.0,
+              ),
+              TicTacToeApp(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 28.0),
                 child: PortfolioStats(),
               ),
-              SizedBox(
-                height: 50.0,
-              ),
-              EducationSection(),
               SizedBox(
                 height: 50.0,
               ),
@@ -106,7 +105,6 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 50.0,
               ),
-              TestimonialWidget(),
               Footer(),
             ],
           ),

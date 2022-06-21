@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryColor = Color.fromRGBO(21, 181, 114, 1);
-const Color kBackgroundColor = Color.fromRGBO(7, 17, 26, 1);
-const Color kDangerColor = Color.fromRGBO(249, 77, 30, 1);
-const Color kCaptionColor = Color.fromRGBO(166, 177, 187, 1);
+const Color kPrimaryColor = Color(0xffF95738);
+const Color kBackgroundColor = Color(0xff01162C);
+const Color kDangerColor = Color(0xffFF3209);
+const Color kCaptionColor = Color(0xffC5DECD);
 
 // Lets replace all static sizes
 const double kDesktopMaxWidth = 1000.0;

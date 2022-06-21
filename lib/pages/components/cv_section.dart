@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/design_process.dart';
@@ -8,28 +7,28 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 
 final List<DesignProcess> designProcesses = [
   DesignProcess(
-    title: "DESIGN",
+    title: "DEVELOP",
     imagePath: "assets/design.png",
     subtitle:
-        "A full stack allround designer thay may or may not include a guide for specific creative",
+        "I design and develop cross-platform application according to design.",
   ),
   DesignProcess(
-    title: "DEVELOP",
+    title: "COOPERATE",
     imagePath: "assets/develop.png",
     subtitle:
-        "A full stack allround developer thay may or may not include a guide for specific creative",
+        "App development can involve various specialists like UI/UX designers, QA engineers, Project Managers, I can cooperate with all team members to achieve the best results.",
   ),
   DesignProcess(
-    title: "WRITE",
+    title: "CLEAN CODE",
     imagePath: "assets/write.png",
     subtitle:
-        "A full stack allround writer thay may or may not include a guide for specific creative",
+        "I write clean, readable and understandable code that will allow any development team understand code fast and allow scaling of app.",
   ),
   DesignProcess(
-    title: "PROMOTE",
+    title: "INVESTIGATE",
     imagePath: "assets/promote.png",
     subtitle:
-        "A full stack allround promoter thay may or may not include a guide for specific creative",
+        "The IT industry is constantly improving, and new technologies are released. I always investigate on new ways to improve mobile apps, architecture, and framework combination for best result.",
   ),
 ];
 
@@ -59,7 +58,7 @@ class CvSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "BETTER DESIGN,\nBETTER EXPERIENCES",
+                "CLEAN CODE,\nBETTER EXPERIENCES",
                 style: GoogleFonts.oswald(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -111,25 +110,27 @@ class CvSection extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                designProcesses[index].imagePath,
-                                width: 40.0,
-                              ),
-                              SizedBox(
-                                width: 15.0,
-                              ),
-                              Text(
-                                designProcesses[index].title,
-                                style: GoogleFonts.oswald(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                          Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  designProcesses[index].imagePath,
+                                  width: 40.0,
                                 ),
-                              )
-                            ],
+                                SizedBox(
+                                  width: 15.0,
+                                ),
+                                Text(
+                                  designProcesses[index].title,
+                                  style: GoogleFonts.oswald(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 15.0,

@@ -8,23 +8,31 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 List<Skill> skills = [
   Skill(
     skill: "Dart",
-    percentage: 62,
-  ),
-  Skill(
-    skill: "Javascript",
     percentage: 80,
   ),
   Skill(
-    skill: "PHP",
-    percentage: 78,
+    skill: "Flutter",
+    percentage: 80,
+  ),
+  Skill(
+    skill: "Git",
+    percentage: 70,
+  ),
+  Skill(
+    skill: "Firebase",
+    percentage: 50,
+  ),
+  Skill(
+    skill: "Kotlin",
+    percentage: 20,
   ),
   Skill(
     skill: "Python",
-    percentage: 90,
+    percentage: 10,
   ),
-  Skill(
-    skill: "GoLang",
-    percentage: 40,
+   Skill(
+    skill: "Wordpress",
+    percentage: 30,
   ),
 ];
 
@@ -69,23 +77,12 @@ class SkillSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "SKILLS",
+                        "TOOLS",
                         style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
                           fontSize: 28.0,
                           height: 1.3,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10.0,
-                      ),
-                      Text(
-                        "This is all the skills listed below more will be added in due time. This is all the skills listed below more will be added in due time.",
-                        style: TextStyle(
-                          color: kCaptionColor,
-                          height: 1.5,
-                          fontSize: 16.0,
                         ),
                       ),
                       SizedBox(
@@ -121,13 +118,6 @@ class SkillSection extends StatelessWidget {
                                     SizedBox(
                                       width: 10.0,
                                     ),
-                                    Text(
-                                      "${skill.percentage}%",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16.0,
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
