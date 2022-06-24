@@ -115,7 +115,7 @@ Widget featureBlock(double width, String imageUrl, String text) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        HelperText.kashetoSummary,
+                        text,
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
