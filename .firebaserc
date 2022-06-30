@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "web-portfolio-ddd55"
-  }
+    "default": "my-portfolio-website-8d541",
+    "hosting": "my-portfolio-website-8d541"
+  },
+  "targets": {}
 }

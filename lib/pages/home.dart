@@ -8,6 +8,7 @@ import 'package:web_portfolio/pages/projects/kasheto_app.dart';
 import 'package:web_portfolio/pages/components/portfolio_stats.dart';
 import 'package:web_portfolio/pages/components/skill_section.dart';
 import 'package:web_portfolio/pages/components/sponsors.dart';
+import 'package:web_portfolio/pages/projects/portfolio_website.dart';
 import 'package:web_portfolio/pages/projects/thrifty_expense.dart';
 import 'package:web_portfolio/pages/projects/tic_tac_toe_game.dart';
 import 'package:web_portfolio/utils/constants.dart';
@@ -90,6 +91,10 @@ class Home extends StatelessWidget {
                 height: 70.0,
               ),
               TicTacToeApp(),
+              SizedBox(
+                height: 70.0,
+              ),
+              PortfolioWebsite(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 28.0),
                 child: PortfolioStats(),
