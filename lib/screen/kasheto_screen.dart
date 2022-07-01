@@ -58,16 +58,108 @@ class KashetoScreen extends StatelessWidget {
                 fontSize: 30.0,
               ),
             ),
-            Container(
-              child: ScreenHelper(
-                desktop: featureBlock(kDesktopMaxWidth, "assets/ios.png",
-                    'grhrhrhrhrrhrhhfhghfhhghghghghghghghghghgghg ghghghghg gfgdhdhd dffjfjg ghgjgjgjg gjgjgjghg ghgjhgjhghg ghghgjgjg gghghfgf dggdgd dgdgdfgf fgvbffghffhruihg gugugigghb'),
-                tablet: featureBlock(kTabletMaxWidth, "assets/ios.png",
-                    'grhrhrhrhrrhrhhfhghfhhghghghghghghghghghgghg ghghghghg gfgdhdhd dffjfjg ghgjgjgjg gjgjgjghg ghgjhgjhghg ghghgjgjg gghghfgf dggdgd dgdgdfgf fgvbffghffhruihg gugugigghb'),
-                mobile: featureBlock(
-                    getMobileMaxWidth(context),
-                    "assets/ios.png",
-                    'grhrhrhrhrrhrhhfhghfhhghghghghghghghghghgghg ghghghghg gfgdhdhd dffjfjg ghgjgjgjg gjgjgjghg ghgjhgjhghg ghghgjgjg gghghfgf dggdgd dgdgdfgf fgvbffghffhruihg gugugigghb'),
+            ScreenHelper(
+              desktop: featureBlock(
+                kDesktopMaxWidth,
+                imageUrl: k1image,
+                title1: k1t1,
+                title2: k1t2,
+                body1: k1b1,
+                body2: k1b2,
+              ),
+              tablet: featureBlock(
+                kTabletMaxWidth,
+                imageUrl: k1image,
+                title1: k1t1,
+                title2: k1t2,
+                body1: k1b1,
+                body2: k1b2,
+              ),
+              mobile: featureBlock(
+                getMobileMaxWidth(context),
+                imageUrl: k1image,
+                title1: k1t1,
+                title2: k1t2,
+                body1: k1b1,
+                body2: k1b2,
+              ),
+            ),
+            ScreenHelper(
+              desktop: featureBlock(
+                kDesktopMaxWidth,
+                imageUrl: k2image,
+                title1: k2t1,
+                title2: k2t2,
+                body1: k2b1,
+                body2: k2b2,
+              ),
+              tablet: featureBlock(
+                kTabletMaxWidth,
+                imageUrl: k2image,
+                title1: k2t1,
+                title2: k2t2,
+                body1: k2b1,
+                body2: k2b2,
+              ),
+              mobile: featureBlock(
+                getMobileMaxWidth(context),
+                imageUrl: k2image,
+                title1: k2t1,
+                title2: k2t2,
+                body1: k2b1,
+                body2: k2b2,
+              ),
+            ),
+            ScreenHelper(
+              desktop: featureBlock(
+                kDesktopMaxWidth,
+                imageUrl: k3image,
+                title1: k3t1,
+                title2: k3t2,
+                body1: k3b1,
+                body2: k3b2,
+              ),
+              tablet: featureBlock(
+                kTabletMaxWidth,
+                imageUrl: k3image,
+                title1: k3t1,
+                title2: k3t2,
+                body1: k3b1,
+                body2: k3b2,
+              ),
+              mobile: featureBlock(
+                getMobileMaxWidth(context),
+                imageUrl: k3image,
+                title1: k3t1,
+                title2: k3t2,
+                body1: k3b1,
+                body2: k3b2,
+              ),
+            ),
+            ScreenHelper(
+              desktop: featureBlock(
+                kDesktopMaxWidth,
+                imageUrl: k4image,
+                title1: k4t1,
+                title2: k4t2,
+                body1: k4b1,
+                body2: k4b2,
+              ),
+              tablet: featureBlock(
+                kTabletMaxWidth,
+                imageUrl: k4image,
+                title1: k4t1,
+                title2: k4t2,
+                body1: k4b1,
+                body2: k4b2,
+              ),
+              mobile: featureBlock(
+                getMobileMaxWidth(context),
+                imageUrl: k4image,
+                title1: k4t1,
+                title2: k4t2,
+                body1: k4b1,
+                body2: k4b2,
               ),
             ),
           ],
@@ -77,15 +169,8 @@ class KashetoScreen extends StatelessWidget {
   }
 }
 
-// Container(
-//       child: ScreenHelper(
-//         desktop: featureBlock(kDesktopMaxWidth),
-//         tablet: featureBlock(kTabletMaxWidth),
-//         mobile: featureBlock(getMobileMaxWidth(context)),
-//       ),
-//     );
-
-Widget featureBlock(double width, String imageUrl, String text) {
+Widget featureBlock(double width,
+    {String imageUrl, String title1, String title2, String body1, body2}) {
   return Center(
     child: LayoutBuilder(
       builder: (context, constraints) {
@@ -115,15 +200,41 @@ Widget featureBlock(double width, String imageUrl, String text) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        text,
+                        title1,
+                        style: GoogleFonts.oswald(
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.w900,
+                          height: 1.3,
+                          fontSize: 30.0,
+                        ),
+                      ),
+                      Text(
+                        body1,
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
                           fontSize: 15.0,
                         ),
                       ),
-                      SizedBox(
-                        height: 25.0,
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        title2,
+                        style: GoogleFonts.oswald(
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.w900,
+                          height: 1.3,
+                          fontSize: 30.0,
+                        ),
+                      ),
+                      Text(
+                        body2,
+                        style: TextStyle(
+                          color: kCaptionColor,
+                          height: 1.5,
+                          fontSize: 15.0,
+                        ),
                       ),
                     ],
                   ),

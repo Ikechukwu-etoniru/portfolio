@@ -13,7 +13,7 @@ List<CarouselItemModel> carouselItems = List.generate(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "MOBILE DEVELOPER",
+            "MOBILE DEVELOPER [FLUTTER/DART]",
             style: GoogleFonts.oswald(
               color: kPrimaryColor,
               fontWeight: FontWeight.w900,

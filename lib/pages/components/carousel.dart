@@ -110,7 +110,7 @@ Widget _buildTablet(BuildContext context, Widget text, Widget image) {
   );
 }
 
-// SMall Screens
+// Small Screens
 
 Widget _buildMobile(BuildContext context, Widget text, Widget image) {
   return Container(
