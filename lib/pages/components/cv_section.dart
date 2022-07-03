@@ -16,7 +16,7 @@ final List<DesignProcess> designProcesses = [
     title: "COOPERATE",
     imagePath: "assets/develop.png",
     subtitle:
-        "App development can involve various specialists like UI/UX designers, QA engineers, Project Managers, I can cooperate with all team members to achieve the best results.",
+        "App development can involve various specialists like UI/UX designers, QA engineers, Project Managers, I collaborate with all team members to achieve the best results.",
   ),
   DesignProcess(
     title: "CLEAN CODE",

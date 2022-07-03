@@ -36,9 +36,10 @@ class KashetoApp extends StatelessWidget {
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
                     child: Image.asset(
-                      "assets/ios.png",
+                      "assets/kasheto.png",
                       // Set width for image on smaller screen
-                      width: constraints.maxWidth > 720.0 ? null : 350.0,
+                      width: constraints.maxWidth > 720.0 ? null : 350.0,                      
+                    height: constraints.maxWidth > 720.0 ? 500 : 200,
                     ),
                   ),
                   Expanded(

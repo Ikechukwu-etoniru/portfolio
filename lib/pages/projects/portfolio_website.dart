@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:web_portfolio/screen/web_port_sreen.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:web_portfolio/utils/text.dart';
@@ -87,7 +88,12 @@ class PortfolioWebsite extends StatelessWidget {
                                   horizontal: 28.0,
                                 ),
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(builder: (_) {
+                                      return WebPortScreen();
+                                    }));
+                                  },
                                   child: Center(
                                     child: Text(
                                       "EXPLORE MORE",
@@ -118,9 +124,11 @@ class PortfolioWebsite extends StatelessWidget {
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
                     child: Image.asset(
-                      "assets/laptop.png",
+                      "assets/webport.png",
                       // Set width for image on smaller screen
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
+                      
+                    height: constraints.maxWidth > 720.0 ? 500 : 200,
                     ),
                   ),
                 ],

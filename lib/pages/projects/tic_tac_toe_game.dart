@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/screen/kasheto_screen.dart';
+import 'package:web_portfolio/screen/tic_tac_toe_screen.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:web_portfolio/utils/text.dart';
 
 class TicTacToeApp extends StatelessWidget {
-   @override
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: ScreenHelper(
@@ -36,9 +37,11 @@ class TicTacToeApp extends StatelessWidget {
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
                     child: Image.asset(
-                      "assets/ios.png",
+                      "assets/tictactoe.png",
                       // Set width for image on smaller screen
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
+
+                      height: constraints.maxWidth > 720.0 ? 500 : 200,
                     ),
                   ),
                   Expanded(
@@ -98,7 +101,7 @@ class TicTacToeApp extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(builder: (_) {
-                                      return KashetoScreen();
+                                      return TicTacToeScreen();
                                     }));
                                   },
                                   child: Center(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/pages/components/carousel.dart';
 import 'package:web_portfolio/pages/components/carousel_items.dart';
 import 'package:web_portfolio/pages/components/cv_section.dart';
@@ -17,6 +18,24 @@ import 'package:web_portfolio/utils/globals.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<HeaderItem> headerItems = [
+  HeaderItem(
+    title: "HOME",
+    onTap: () {
+      Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+    },
+  ),
+  // HeaderItem(title: "MY INTRO", onTap: () {}),
+  // HeaderItem(title: "SERVICES", onTap: () {}),
+  // HeaderItem(title: "PORTFOLIO", onTap: () {}),
+  // HeaderItem(title: "TESTIMONIALS", onTap: () {}),
+  // HeaderItem(title: "BLOGS", onTap: () {}),
+  HeaderItem(
+    title: "HIRE ME",
+    onTap: () {},
+    isButton: true,
+  ),
+];
     return Scaffold(
       key: Globals.scaffoldKey,
       endDrawer: Drawer(
@@ -82,6 +101,9 @@ class Home extends StatelessWidget {
                 height: 20.0,
               ),
               CvSection(),
+              SizedBox(
+                height: 70.0,
+              ),
               KashetoApp(),
               SizedBox(
                 height: 70.0,

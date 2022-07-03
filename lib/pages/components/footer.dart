@@ -9,7 +9,7 @@ final List<FooterItem> footerItems = [
   FooterItem(
     iconPath: "assets/mappin.png",
     title: "ADDRESS",
-    text1: "999 Carter Street",
+    text1: "Okota, Lagos State",
   ),
   FooterItem(
     iconPath: "assets/phone.png",

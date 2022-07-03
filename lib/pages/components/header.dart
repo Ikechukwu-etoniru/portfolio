@@ -7,23 +7,6 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 
-List<HeaderItem> headerItems = [
-  HeaderItem(
-    title: "HOME",
-    onTap: () {},
-  ),
-  HeaderItem(title: "MY INTRO", onTap: () {}),
-  HeaderItem(title: "SERVICES", onTap: () {}),
-  HeaderItem(title: "PORTFOLIO", onTap: () {}),
-  HeaderItem(title: "TESTIMONIALS", onTap: () {}),
-  HeaderItem(title: "BLOGS", onTap: () {}),
-  HeaderItem(
-    title: "HIRE ME",
-    onTap: () {},
-    isButton: true,
-  ),
-];
-
 class HeaderLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -31,7 +14,10 @@ class HeaderLogo extends StatelessWidget {
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil('/', (route) => false);
+          },
           child: RichText(
             text: TextSpan(
               children: [
@@ -63,6 +49,24 @@ class HeaderLogo extends StatelessWidget {
 class HeaderRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<HeaderItem> headerItems = [
+      HeaderItem(
+        title: "HOME",
+        onTap: () {
+          Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+        },
+      ),
+      // HeaderItem(title: "MY INTRO", onTap: () {}),
+      // HeaderItem(title: "SERVICES", onTap: () {}),
+      // HeaderItem(title: "PORTFOLIO", onTap: () {}),
+      // HeaderItem(title: "TESTIMONIALS", onTap: () {}),
+      // HeaderItem(title: "BLOGS", onTap: () {}),
+      HeaderItem(
+        title: "HIRE ME",
+        onTap: () {},
+        isButton: true,
+      ),
+    ];
     return ResponsiveVisibility(
       visible: false,
       visibleWhen: [

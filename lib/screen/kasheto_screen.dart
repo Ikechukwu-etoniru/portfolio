@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/pages/components/carousel.dart';
 import 'package:web_portfolio/pages/components/carousel_items.dart';
+import 'package:web_portfolio/pages/components/footer.dart';
 import 'package:web_portfolio/pages/components/header.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
@@ -25,7 +26,7 @@ class KashetoScreen extends StatelessWidget {
             Text(
               "ABOUT KASHETO APP",
               style: GoogleFonts.oswald(
-                color: Colors.white,
+                color: kPrimaryColor,
                 fontWeight: FontWeight.w900,
                 height: 1.3,
                 fontSize: 30.0,
@@ -35,12 +36,12 @@ class KashetoScreen extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 100),
               child: Text(
                 HelperText.kashetoSummary,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.oswald(
-                  color: kPrimaryColor,
+                  color: Colors.white,
                   fontWeight: FontWeight.w900,
                   fontSize: 16.0,
                 ),
@@ -58,6 +59,9 @@ class KashetoScreen extends StatelessWidget {
                 fontSize: 30.0,
               ),
             ),
+            SizedBox(
+              height: 50,
+            ),
             ScreenHelper(
               desktop: featureBlock(
                 kDesktopMaxWidth,
@@ -83,6 +87,9 @@ class KashetoScreen extends StatelessWidget {
                 body1: k1b1,
                 body2: k1b2,
               ),
+            ),
+            SizedBox(
+              height: 70,
             ),
             ScreenHelper(
               desktop: featureBlock(
@@ -110,6 +117,9 @@ class KashetoScreen extends StatelessWidget {
                 body2: k2b2,
               ),
             ),
+            SizedBox(
+              height: 70,
+            ),
             ScreenHelper(
               desktop: featureBlock(
                 kDesktopMaxWidth,
@@ -135,6 +145,9 @@ class KashetoScreen extends StatelessWidget {
                 body1: k3b1,
                 body2: k3b2,
               ),
+            ),
+            SizedBox(
+              height: 70,
             ),
             ScreenHelper(
               desktop: featureBlock(
@@ -162,6 +175,10 @@ class KashetoScreen extends StatelessWidget {
                 body2: k4b2,
               ),
             ),
+            SizedBox(
+              height: 50,
+            ),
+            Footer(),
           ],
         ),
       ),
@@ -191,6 +208,7 @@ Widget featureBlock(double width,
                     // "assets/ios.png",
                     // Set width for image on smaller screen
                     width: constraints.maxWidth > 720.0 ? null : 350.0,
+                    height: constraints.maxWidth > 720.0 ? 500 : 200,
                   ),
                 ),
                 Expanded(

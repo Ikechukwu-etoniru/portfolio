@@ -4,7 +4,8 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 
 final List<String> sponsorsLogo = [
-  "assets/brand1.png",  
+  "assets/brand1.png",
+  "assets/brand2.png",
 ];
 
 class Sponsors extends StatelessWidget {
@@ -35,8 +36,11 @@ Widget _buildUi(double width) {
             children: sponsorsLogo
                 .map(
                   (logo) => Container(
-                    height: 20.0,
-                    child: Image.asset(logo),
+                    height: 40.0,
+                    child: Image.asset(
+                      logo,
+                      fit: BoxFit.fill,
+                    ),
                     constraints: BoxConstraints(
                       // max of 3 per row when on mobile and 5 per row on bigger screens
                       maxWidth: ScreenHelper.isMobile(context)
