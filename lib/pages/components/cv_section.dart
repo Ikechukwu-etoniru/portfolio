@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/models/design_process.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
@@ -32,7 +33,52 @@ final List<DesignProcess> designProcesses = [
   ),
 ];
 
-class CvSection extends StatelessWidget {
+class CvSection extends StatefulWidget {
+  @override
+  State<CvSection> createState() => _CvSectionState();
+}
+
+class _CvSectionState extends State<CvSection> {
+  var _isLoading = false;
+  final Uri _url = Uri.parse(
+      'https://drive.google.com/uc?export=download&id=16k_TuUwhZJDokw3QFyJA244-Z_YCEPNB');
+
+  void _launchUrl() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      await Future.delayed(const Duration(seconds: 3));
+      await launchUrl(
+        _url,
+      );
+    } catch (error) {
+      print(error);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: kDangerColor,
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 20,
+          ),
+          elevation: 30,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          action: SnackBarAction(
+              label: 'Close',
+              onPressed: () {
+                ScaffoldMessenger.of(context).removeCurrentSnackBar();
+              }),
+          content: Text('An error occured. ${error.toString()}'),
+        ),
+      );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -66,20 +112,27 @@ class CvSection extends StatelessWidget {
                   fontSize: 18.0,
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Text(
-                    "DOWNLOAD CV",
-                    style: GoogleFonts.oswald(
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 16.0,
+              if (_isLoading)
+                Center(
+                  child: CircularProgressIndicator(
+                    color: kPrimaryColor,
+                  ),
+                ),
+              if (!_isLoading)
+                GestureDetector(
+                  onTap: _launchUrl,
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Text(
+                      "DOWNLOAD CV",
+                      style: GoogleFonts.oswald(
+                        color: kPrimaryColor,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 16.0,
+                      ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
           SizedBox(

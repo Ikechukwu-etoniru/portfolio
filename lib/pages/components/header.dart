@@ -3,6 +3,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/header_item.dart';
+import 'package:web_portfolio/utils/alert.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
@@ -63,7 +64,9 @@ class HeaderRow extends StatelessWidget {
       // HeaderItem(title: "BLOGS", onTap: () {}),
       HeaderItem(
         title: "HIRE ME",
-        onTap: () {},
+        onTap: () {
+          Alert.showContactDialog(context);
+        },
         isButton: true,
       ),
     ];
@@ -132,14 +135,35 @@ class Header extends StatelessWidget {
           child: buildHeader(),
         ),
         // We will make this in a bit
-        mobile: buildMobileHeader(),
+        mobile: buildMobileHeader(context: context),
+
         tablet: buildHeader(),
       ),
     );
   }
 
   // mobile header
-  Widget buildMobileHeader() {
+  Widget buildMobileHeader({BuildContext context}) {
+    List<HeaderItem> headerItems = [
+      HeaderItem(
+        title: "HOME",
+        onTap: () {
+          Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+        },
+      ),
+      // HeaderItem(title: "MY INTRO", onTap: () {}),
+      // HeaderItem(title: "SERVICES", onTap: () {}),
+      // HeaderItem(title: "PORTFOLIO", onTap: () {}),
+      // HeaderItem(title: "TESTIMONIALS", onTap: () {}),
+      // HeaderItem(title: "BLOGS", onTap: () {}),
+      HeaderItem(
+        title: "HIRE ME",
+        onTap: () {
+          Alert.showContactDialog(context);
+        },
+        isButton: true,
+      ),
+    ];
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -147,19 +171,68 @@ class Header extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             HeaderLogo(),
+            const Spacer(),
+            Row(
+              children: headerItems
+                  .map(
+                    (item) => item.isButton
+                        ? MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: kDangerColor,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 5.0),
+                              child: TextButton(
+                                onPressed: item.onTap,
+                                child: Text(
+                                  item.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        : MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: Container(
+                              margin: EdgeInsets.only(right: 30.0),
+                              child: GestureDetector(
+                                onTap: item.onTap,
+                                child: Text(
+                                  item.title,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                  )
+                  .toList(),
+            ),
+
             // Restart server to make icons work
             // Lets make a scaffold key and create a drawer
-            GestureDetector(
-              onTap: () {
-                // Lets open drawer using global key
-                Globals.scaffoldKey.currentState.openEndDrawer();
-              },
-              child: Icon(
-                FlutterIcons.menu_fea,
-                color: Colors.white,
-                size: 28.0,
-              ),
-            )
+            // GestureDetector(
+            //   onTap: () {
+            //     // Lets open drawer using global key
+            //     // Globals.scaffoldKey.currentState.openEndDrawer();
+            //     Scaffold.of(context).openEndDrawer();
+            //   },
+            //   child: Icon(
+            //     FlutterIcons.menu_fea,
+            //     color: Colors.white,
+            //     size: 28.0,
+            //   ),
+            // )
           ],
         ),
       ),
