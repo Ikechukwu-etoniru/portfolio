@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/pages/components/carousel.dart';
 import 'package:web_portfolio/pages/components/carousel_items.dart';
 import 'package:web_portfolio/pages/components/footer.dart';
@@ -9,8 +10,53 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:web_portfolio/utils/text.dart';
 
-class KashetoScreen extends StatelessWidget {
+class KashetoScreen extends StatefulWidget {
   const KashetoScreen();
+
+  @override
+  State<KashetoScreen> createState() => _KashetoScreenState();
+}
+
+class _KashetoScreenState extends State<KashetoScreen> {
+  final Uri _url = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.kasheto.kasheto_flutter');
+  var _isLoading = false;
+
+  void _launchUrl() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      await Future.delayed(const Duration(seconds: 1));
+      await launchUrl(
+        _url,
+      );
+    } catch (error) {
+      print(error);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: kDangerColor,
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 20,
+          ),
+          elevation: 30,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          action: SnackBarAction(
+              label: 'Close',
+              onPressed: () {
+                ScaffoldMessenger.of(context).removeCurrentSnackBar();
+              }),
+          content: Text('An error occured. ${error.toString()}'),
+        ),
+      );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -174,6 +220,28 @@ class KashetoScreen extends StatelessWidget {
                 body1: k4b1,
                 body2: k4b2,
               ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    _launchUrl();
+                  },
+                  child: SizedBox(
+                    height: 40,
+                    child: _isLoading
+                        ? CircularProgressIndicator()
+                        : Image.asset('assets/google_play.png'),
+                  ),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+              ],
             ),
             SizedBox(
               height: 50,

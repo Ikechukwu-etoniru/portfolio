@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/pages/components/carousel.dart';
 import 'package:web_portfolio/pages/components/carousel_items.dart';
 import 'package:web_portfolio/pages/components/footer.dart';
@@ -9,8 +10,53 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:web_portfolio/utils/text.dart';
 
-class TicTacToeScreen extends StatelessWidget {
+class TicTacToeScreen extends StatefulWidget {
   const TicTacToeScreen();
+
+  @override
+  State<TicTacToeScreen> createState() => _TicTacToeScreenState();
+}
+
+class _TicTacToeScreenState extends State<TicTacToeScreen> {
+  var _isLoading = false;
+  final Uri _url = Uri.parse(
+      'https://drive.google.com/uc?export=download&id=16k_TuUwhZJDokw3QFyJA244-Z_YCEPNB');
+
+  void _launchUrl() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      await Future.delayed(const Duration(seconds: 3));
+      await launchUrl(
+        _url,
+      );
+    } catch (error) {
+      print(error);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: kDangerColor,
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 20,
+          ),
+          elevation: 30,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          action: SnackBarAction(
+              label: 'Close',
+              onPressed: () {
+                ScaffoldMessenger.of(context).removeCurrentSnackBar();
+              }),
+          content: Text('An error occured. ${error.toString()}'),
+        ),
+      );
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +162,28 @@ class TicTacToeScreen extends StatelessWidget {
                 body1: t2b1,
                 body2: t2b2,
               ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    _launchUrl();
+                  },
+                  child: SizedBox(
+                    height: 40,
+                    child: _isLoading
+                        ? CircularProgressIndicator()
+                        : Image.asset('assets/google_play.png'),
+                  ),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+              ],
             ),
             SizedBox(
               height: 50,

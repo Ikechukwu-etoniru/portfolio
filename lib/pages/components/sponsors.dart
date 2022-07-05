@@ -36,7 +36,7 @@ Widget _buildUi(double width) {
             children: sponsorsLogo
                 .map(
                   (logo) => Container(
-                    height: 40.0,
+                    height: logo == "assets/brand2.png" ? 50 : 40.0,
                     child: Image.asset(
                       logo,
                       fit: BoxFit.fill,

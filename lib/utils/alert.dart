@@ -11,6 +11,8 @@ class Alert {
           final phoneNumber = '+2348103857337';
           final email = 'Ikechukwuetoniru@gmail.com';
           final githubProfile = 'https://github.com/Ikechukwu-etoniru';
+          final linkedInProfile =
+              'https://www.linkedin.com/in/ikechukwu-etoniru-74429b151/';
           return Dialog(
             elevation: 20,
             backgroundColor: kPrimaryColor,
@@ -75,7 +77,7 @@ class Alert {
                   Row(
                     children: [
                       Text(
-                       email,
+                        email,
                         style: GoogleFonts.quicksand(
                           color: Colors.white54,
                           fontWeight: FontWeight.w900,
@@ -132,10 +134,46 @@ class Alert {
                   const SizedBox(
                     height: 20,
                   ),
+                  Text(
+                    'My LinkedIn Profile',
+                    style: GoogleFonts.oswald(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w900,
+                      height: 1,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        linkedInProfile,
+                        style: GoogleFonts.quicksand(
+                          color: Colors.white54,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        onPressed: () {
+                          Clipboard.setData(
+                            ClipboardData(text: linkedInProfile),
+                          );
+                        },
+                        icon: Icon(Icons.copy),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),
           );
         });
-  }
+  }  
 }

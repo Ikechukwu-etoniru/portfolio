@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:web_portfolio/models/carousel_item_model.dart';
 import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/pages/components/carousel.dart';
-import 'package:web_portfolio/pages/components/carousel_items.dart';
 import 'package:web_portfolio/pages/components/cv_section.dart';
 import 'package:web_portfolio/pages/components/footer.dart';
 import 'package:web_portfolio/pages/components/header.dart';
