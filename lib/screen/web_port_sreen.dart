@@ -35,7 +35,7 @@ class WebPortScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 100),
               child: Text(
-                'What can i say, you have seen it all',
+                'What can i say',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.oswald(
                   color: Colors.white,

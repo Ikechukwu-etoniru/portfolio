@@ -74,7 +74,7 @@ class TicTacToeApp extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          HelperText.kashetoSummary,
+                          HelperText.tictactoeSummary,
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,

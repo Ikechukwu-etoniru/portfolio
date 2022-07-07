@@ -26,42 +26,42 @@ class Alert {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'My Phone Number',
-                    style: GoogleFonts.oswald(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w900,
-                      height: 1,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        phoneNumber,
-                        style: GoogleFonts.quicksand(
-                          color: Colors.white54,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                      const Spacer(),
-                      IconButton(
-                        onPressed: () {
-                          Clipboard.setData(
-                            ClipboardData(text: phoneNumber),
-                          );
-                        },
-                        icon: Icon(Icons.copy),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  // Text(
+                  //   'My Phone Number',
+                  //   style: GoogleFonts.oswald(
+                  //     color: Colors.white,
+                  //     fontSize: 20.0,
+                  //     fontWeight: FontWeight.w900,
+                  //     height: 1,
+                  //   ),
+                  // ),
+                  // const SizedBox(
+                  //   height: 20,
+                  // ),
+                  // Row(
+                  //   children: [
+                  //     Text(
+                  //       phoneNumber,
+                  //       style: GoogleFonts.quicksand(
+                  //         color: Colors.white54,
+                  //         fontWeight: FontWeight.w900,
+                  //         fontSize: 16.0,
+                  //       ),
+                  //     ),
+                  //     const Spacer(),
+                  //     IconButton(
+                  //       onPressed: () {
+                  //         Clipboard.setData(
+                  //           ClipboardData(text: phoneNumber),
+                  //         );
+                  //       },
+                  //       icon: Icon(Icons.copy),
+                  //     ),
+                  //   ],
+                  // ),
+                  // const SizedBox(
+                  //   height: 20,
+                  // ),
                   Text(
                     'My Email Address',
                     style: GoogleFonts.oswald(
@@ -170,10 +170,28 @@ class Alert {
                   const SizedBox(
                     height: 20,
                   ),
+                  Center(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        'Close',
+                        style: GoogleFonts.quicksand(
+                          // color: Colors.white54,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),
           );
         });
-  }  
+  }
 }

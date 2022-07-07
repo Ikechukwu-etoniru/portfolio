@@ -20,7 +20,7 @@ class TicTacToeScreen extends StatefulWidget {
 class _TicTacToeScreenState extends State<TicTacToeScreen> {
   var _isLoading = false;
   final Uri _url = Uri.parse(
-      'https://drive.google.com/uc?export=download&id=16k_TuUwhZJDokw3QFyJA244-Z_YCEPNB');
+      'https://play.google.com/store/apps/details?id=com.ilated.tic_toe_game');
 
   void _launchUrl() async {
     setState(() {
@@ -84,11 +84,11 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 100),
               child: Text(
-                HelperText.tictactoeSummary,
-                textAlign: TextAlign.center,
+                HelperText.tictactoeDes,
+               textAlign: TextAlign.left,
                 style: GoogleFonts.oswald(
                   color: Colors.white,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w300,
                   fontSize: 16.0,
                 ),
               ),

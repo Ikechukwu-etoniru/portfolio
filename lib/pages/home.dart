@@ -226,10 +226,10 @@ class Home extends StatelessWidget {
                 height: 70.0,
               ),
               TicTacToeApp(),
-              SizedBox(
-                height: 70.0,
-              ),
-              PortfolioWebsite(),
+              // SizedBox(
+              //   height: 70.0,
+              // ),
+              // PortfolioWebsite(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 28.0),
                 child: PortfolioStats(),
@@ -241,7 +241,7 @@ class Home extends StatelessWidget {
               SizedBox(
                 height: 50.0,
               ),
-              Sponsors(),
+              // Sponsors(),
               SizedBox(
                 height: 50.0,
               ),

@@ -84,11 +84,11 @@ class _ThriftyExpenseScreenState extends State<ThriftyExpenseScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 100),
               child: Text(
-                HelperText.thriftyExpenseSummary,
-                textAlign: TextAlign.center,
+                HelperText.thriftyExpenseDes,
+                textAlign: TextAlign.left,
                 style: GoogleFonts.oswald(
                   color: Colors.white,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w300,
                   fontSize: 16.0,
                 ),
               ),

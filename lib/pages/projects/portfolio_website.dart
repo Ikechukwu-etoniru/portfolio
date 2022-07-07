@@ -64,7 +64,7 @@ class PortfolioWebsite extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          HelperText.thriftyExpenseSummary,
+                          HelperText.portfolioWbSummary,
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,
@@ -127,8 +127,8 @@ class PortfolioWebsite extends StatelessWidget {
                       "assets/webport.png",
                       // Set width for image on smaller screen
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
-                      
-                    height: constraints.maxWidth > 720.0 ? 500 : 200,
+
+                      height: constraints.maxWidth > 720.0 ? 500 : 200,
                     ),
                   ),
                 ],

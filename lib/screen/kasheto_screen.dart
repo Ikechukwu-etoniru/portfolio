@@ -81,15 +81,18 @@ class _KashetoScreenState extends State<KashetoScreen> {
             SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 100),
-              child: Text(
-                HelperText.kashetoSummary,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.oswald(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                  fontSize: 16.0,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  HelperText.kashetoDes,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.oswald(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 16.0,
+                  ),
                 ),
               ),
             ),
